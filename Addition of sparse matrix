@@ -1,0 +1,186 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,j,temp,p=0,k,z,q=0,r1[z],c1[z],val1[z],r[k],c[k],val[k];
+    
+    int a[3][3],b[3][3],sum[3][3];
+
+    int count=0,flag=0;
+    printf("Enter the 1st matrix elements: \n");
+
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+     {
+        scanf("%d",&a[i][j]);
+        if(a[i][j]==0)
+        {
+        count++;
+        }
+     }
+    }
+    printf("\nThe 1st matrix is :\n\n");
+    for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+        printf("%d ",a[i][j]);
+    }
+    printf("\n");
+}
+//----------------------------------------
+    printf("Enter the 2nd matrix elements: \n");
+
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+     {
+        scanf("%d",&b[i][j]);
+        if(b[i][j]==0)
+        {
+        flag++;
+        }
+     }
+    }
+    printf("\nThe 2nd matrix is :\n\n");
+    for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+        printf("%d ",b[i][j]);
+    }
+    printf("\n");
+}
+
+if(flag>=5)
+      {
+	 z = 9-flag;
+	printf("This is 2nd sparse matrix: \n");
+        for(i=0;i<3;i++)
+          {
+           for(j=0;j<3;j++)
+           {
+
+           	if(b[i][j]!=0)
+		{
+                 r1[q]=i;
+                 c1[q]=j;
+                 val1[q]=a[i][j];
+		 q++;
+                }
+
+            }
+          }
+          
+          
+          printf("Row   =  ");
+    for(q=0;q<z;q++)
+    {
+	
+        printf("%d  ",r1[q]);
+
+    }
+     printf("\n");
+    printf("Column = ");
+
+       for(q=0;q<z;q++)
+    {
+
+        printf("%d  ",c1[q]);
+
+    }
+    printf("\n");
+    printf("Value =  ");
+
+   for(q=0;q<z;q++)
+    {
+    
+        printf("%d  ",val1[q]);
+
+
+    }
+printf("\n\n\n");
+
+      }
+    else
+      {
+        printf("The 2nd matrix is not a sparce matrix.\n");
+      }
+//----------------------------------
+
+
+    if(count>=5)
+      {
+	 k = 9-count;
+	printf("This is 1st sparse matrix: \n");
+        for(i=0;i<3;i++)
+          {
+           for(j=0;j<3;j++)
+           {
+
+           	if(a[i][j]!=0)
+		{
+                 r[p]=i;
+                 c[p]=j;
+                 val[p]=a[i][j];
+		 p++;
+                }
+
+            }
+          }
+          
+          
+          printf("Row   =  ");
+    for(p=0;p<k;p++)
+    {
+	
+        printf("%d  ",r[p]);
+
+    }
+     printf("\n");
+    printf("Column = ");
+
+    for(p=0;p<k;p++)
+    {
+
+        printf("%d  ",c[p]);
+
+    }
+    printf("\n");
+    printf("Value =  ");
+
+    for(p=0;p<k;p++)
+    {
+    
+        printf("%d  ",val[p]);
+
+
+    }
+printf("\n\n\n");
+
+      }
+    else
+      {
+        printf("The 1st matrix is not a sparce matrix.\n");
+      }
+      for(i=0;i<3;i++){
+          for(j=0;j<3;j++){
+              sum[i][j]=0;
+          }
+      }
+    for(p=0;p<k;p++){
+        sum[r[p]][c[p]] =  sum[r[p]][c[p]] + a[r[p]][c[p]];
+    }
+    for(q=0;q<z;q++){
+        sum[r1[q]][c1[q]] = sum[r1[q]][c1[q]] + b[r1[q]][c1[q]];
+    }
+printf("The sum of the two sparse matrix is: \n");
+  for(i=0;i<3;i++){
+          for(j=0;j<3;j++){
+              printf("%d  ",sum[i][j]); 
+          }
+          printf("\n");
+      }
+
+
+
+
+    return 0;
+}
