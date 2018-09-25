@@ -86,7 +86,7 @@ for(i=0;i<3;i++){
       }
     else
       {
-        printf("The matrix is not a sparce matrix.\n");
+        printf("The matrix is not a sparse matrix.\n");
       }
    
 
