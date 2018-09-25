@@ -46,12 +46,8 @@ int main()
 
             }
           }
-      }
-    else
-      {
-        printf("The matrix is not a sparce matrix.\n");
-      }
-    printf("Row   =  ");
+	  
+	   printf("Row   =  ");
     for(p=0;p<k;p++)
     {
         printf("%d  ",r[p]);
@@ -87,6 +83,12 @@ for(i=0;i<3;i++){
     printf("\n");
 }
 
+      }
+    else
+      {
+        printf("The matrix is not a sparce matrix.\n");
+      }
+   
 
 
 
