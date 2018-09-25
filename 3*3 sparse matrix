@@ -1,0 +1,95 @@
+//C Program to find whether a matrix is sparse or not. If yes then transpose it using non-zero value's row and column.
+#include <stdio.h>
+
+int main()
+{
+    int i,j,temp,p=0,k,r[k],c[k],val[k];
+    int a[3][3];
+    int count=0;
+    printf("Enter the array elements: \n");
+
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+     {
+        scanf("%d",&a[i][j]);
+        if(a[i][j]==0)
+        {
+        count++;
+        }
+     }
+    }
+    printf("\nThe matrix is :\n\n");
+    for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+        printf("%d ",a[i][j]);
+    }
+    printf("\n");
+}
+
+    if(count>=5)
+      {
+	 k = 9-count;
+	printf("The matrix is a sparse matrix.\n");
+        for(i=0;i<3;i++)
+          {
+           for(j=0;j<3;j++)
+           {
+
+           	if(a[i][j]!=0)
+		{
+                 r[p]=i;
+                 c[p]=j;
+                 val[p]=a[i][j];
+		 p++;
+                }
+
+            }
+          }
+      }
+    else
+      {
+        printf("The matrix is not a sparce matrix.\n");
+      }
+    printf("Row   =  ");
+    for(p=0;p<k;p++)
+    {
+        printf("%d  ",r[p]);
+    }
+     printf("\n");
+    printf("Column = ");
+
+    for(p=0;p<k;p++)
+    {
+        printf("%d  ",c[p]);
+    }
+    printf("\n");
+    printf("Value =  ");
+
+    for(p=0;p<k;p++)
+    {
+        printf("%d  ",val[p]);
+    }
+printf("\n\n\n");
+printf("The transpose of the above matrix is : \n");
+
+for(p=0;p<k;p++){
+    temp=a[r[p]][c[p]];
+    a[r[p]][c[p]] = a[c[p]][r[p]];
+    a[c[p]][r[p]]= temp;
+}
+
+
+for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+        printf("%d ",a[i][j]);
+    }
+    printf("\n");
+}
+
+
+
+
+
+    return 0;
+}
