@@ -62,7 +62,7 @@ if(flag>=5)
 		{
                  r1[q]=i;
                  c1[q]=j;
-                 val1[q]=a[i][j];
+                 val1[q]=b[i][j];
 		 q++;
                 }
 
