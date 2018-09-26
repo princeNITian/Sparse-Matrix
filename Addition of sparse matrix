@@ -171,6 +171,9 @@ printf("\n\n\n");
     for(q=0;q<z;q++){
         sum[r1[q]][c1[q]] = sum[r1[q]][c1[q]] + b[r1[q]][c1[q]];
     }
+     //If one of them is not a spare it will print other matrix.
+    //If both of them are not sparse then it will print null matrix.
+    // If both of them are sparse then only it will give sum of two.
 printf("The sum of the two sparse matrix is: \n");
   for(i=0;i<3;i++){
           for(j=0;j<3;j++){
